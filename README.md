@@ -1,7 +1,7 @@
 # PubSub-Pattern
 This small solution demonstrates the concepts of the Publish/Subscribe pattern.
 
-### How to set set up? ###
+### How to set up? ###
 A docker environment is required.
 
 From the compose folder run the command: "docker compose -f infrastructure.yml up -d" This will start a container for Redis. Redis acts as the message broker in this solution.
