@@ -1,0 +1,1 @@
+docker compose -f services.yml -f infrastructure.yml up -d

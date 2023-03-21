@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    networks:
+      - exchange
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+
+networks:
+  exchange:
+    name: exchange
+
+volumes:
+  redis:
+    driver: local  

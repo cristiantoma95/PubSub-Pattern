@@ -1,0 +1,38 @@
+version: '3'
+services:
+  central-bank:
+    build:
+      context: ../
+      dockerfile: src/CentralBank/Dockerfile
+    container_name: central-bank
+    restart: unless-stopped
+    ports:
+      - 5010:80
+    networks:
+      - exchange
+
+  deposit-branch:
+    build:
+      context: ../
+      dockerfile: src/DepositBranch/Dockerfile
+    container_name: deposit-branch
+    restart: unless-stopped
+    ports:
+      - 5020:80
+    networks:
+      - exchange
+      
+  loan-branch:
+    build:
+      context: ../
+      dockerfile: src/LoanBranch/Dockerfile
+    container_name: loan-branch
+    restart: unless-stopped
+    ports:
+      - 5030:80
+    networks:
+      - exchange
+      
+networks:
+  exchange:
+    name: exchange
